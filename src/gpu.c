@@ -1,5 +1,5 @@
-//��.024401-2 ���ᥩ�� �.�.
-//��-7 "����� ����������⥬�"
+//гр.024401-2 Мойсейчук А.О.
+//ЛР-7 "Работа видеоподсистемы"
 #include <conio.h>
 #include <dos.h>
 #include <mem.h>
@@ -44,53 +44,53 @@ typedef enum
 
 unsigned char currentVideoPage = 0;
 
-//��楤�� �뢮�� ��ப� str � ����樨 [raw][col]
-//�१ ��אַ� ���饭�� � ����������
+//процедура вывода строки str с позиции [raw][col]
+//через прямое обращение к видеобуферу
 void Print(char* str, unsigned char raw, unsigned char column,
 	unsigned char colour);
 
-//��楤�� ���⪨ ��ப�
+//процедура очистки строки
 void ClearScreenRaw(unsigned char rawNumber, unsigned char startCol);
 
-//��楤�� ���⪨ ��࠭�
+//процедура очистки экрана
 void ClearScreen(void);
 
-//��楤�� �뢮�� �㭪⮢ ���� �ணࠬ��
+//процедура вывода пунктов меню программы
 void PrintStartMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 	
-//��楤�� �뢮�� ���ଠ樨 � ࠧࠡ��稪�
+//процедура вывода информации о разработчике
 void PrintDeveloperInfo(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 
-//��楤�� ������ �����०���
+//процедура задния видеорежима
 void SetVideomode(unsigned char mode);
 
-//��楤�� �ᮢ���� ����� � ����樨 [x0, y0] �� [xEnd, yEnd]
+//процедура рисования линии с позиции [x0, y0] до [xEnd, yEnd]
 void LineBrasenhem(short x0, short y0, short xEnd, short yEnd, unsigned char colour);
 
-//��楤�� �ᮢ���� ��㣠 � 業�஬ � �窥 [xCent, yCent]
-//� ࠤ��ᮬ r
+//процедура рисования круга с центром в точке [xCent, yCent]
+//и радиусом r
 void CircleBrasenhem(short xCent, short yCent, short r, unsigned char colour);
 
 void Square(short x0, short y0, short x1, short y1, unsigned char colour);
 
-//��楤�� �ᮢ���� ���ᥫ� � �窥 [x, y]
+//процедура рисования пикселя в точке [x, y]
 void SetPixel(short x, short y, unsigned char colour);
 
-//��楤�� ��⠭���� 梥� 䮭�
+//процедура установки цвета фона
 void SetBackgroundColour(unsigned char colour);
 
-//��楤�� ��⠭���� 梥⮢�� �������
+//процедура установки цветовой палитры
 void SetPaletteColour(unsigned char paletteNumber);
 
-//��楤�� ��⠭���� �������࠭���
+//процедура установки видеостраницы
 void SetVideoPage(unsigned char number);
 
-//��楤�� �뢮�� ��㭪� �� ��࠭ � ०��� CGA
+//процедура вывода рисунка на экран в режиме CGA
 void CGA(void);
 
-//��楤�� �뢮�� ��㭪� �� ��࠭ � ०��� EGA
+//процедура вывода рисунка на экран в режиме EGA
 void EGA(void);
 
 int main()
@@ -143,9 +143,9 @@ void Print(char* str, unsigned char raw, unsigned char column,
 	unsigned char colour)
 {
 	int i;
-	//0xb8000000 - ���� ��砫� ���������
+	//0xb8000000 - адрес начала видеобуфера
 	char far* videoBuffer = (char far*)0xb8000000;
-	//��।������ ����樨 ��砫� ����� ������ � �����
+	//определение позиции начала записи данных в памяти
 	videoBuffer += raw * SYMBOL_SIZE * SCREEN_LEN + column * SYMBOL_SIZE;
 
 	for (i = 0; str[i] != '\0'; i++)
@@ -167,8 +167,8 @@ void PrintDeveloperInfo(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour)
 {
 	Print("+----------------------------------------+", startRaw++, startCol, colour);
-	Print("|      ��.024401-2 ���ᥩ�� �.�.        |", startRaw++, startCol, colour);
-	Print("|     ��-7 \"����� ����������⥬�\"      |", startRaw++, startCol, colour);
+	Print("|      гр.024401-2 Мойсейчук А.О.        |", startRaw++, startCol, colour);
+	Print("|     ЛР-7 \"Работа видеоподсистемы\"      |", startRaw++, startCol, colour);
 	Print("+----------------------------------------+", startRaw++, startCol, colour);
 }
 
@@ -185,9 +185,9 @@ void PrintStartMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour)
 {
 	Print("+----------------------------------------+", startRaw++, startCol, colour);
-	Print("| 1. CGA (AL = 0x04, 320x200, 4 梥�)   |", startRaw++, startCol, colour);
-	Print("| 2. EGA (AL = 0x0D, 320x200, 16 梥⮢) |", startRaw++, startCol, colour);
-	Print("| 0. ��室                               |", startRaw++, startCol, colour);
+	Print("| 1. CGA (AL = 0x04, 320x200, 4 цвета)   |", startRaw++, startCol, colour);
+	Print("| 2. EGA (AL = 0x0D, 320x200, 16 цветов) |", startRaw++, startCol, colour);
+	Print("| 0. Выход                               |", startRaw++, startCol, colour);
 	Print("+----------------------------------------+", startRaw++, startCol, colour);
 }
 
