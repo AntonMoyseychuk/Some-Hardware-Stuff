@@ -1,5 +1,5 @@
-//£‡.024401-2 åÆ©·•©Á„™ Ä.é.
-//ãê-6 "î„≠™Ê®® BIOS"
+//–≥—Ä.024401-2 –ú–æ–π—Å–µ–π—á—É–∫ –ê.–û.
+//–õ–†-6 "–§—É–Ω–∫—Ü–∏–∏ BIOS"
 #include <conio.h>
 #include <mem.h>
 #include <dos.h>
@@ -70,118 +70,118 @@ typedef struct
 
 typedef struct
 {
-	unsigned hddAvailability : 1; //0 - ≠†´®Á®• ¶Ò·‚™Æ£Æ §®·™†
-	unsigned fpuAvailability : 1; //1 - å†‚•¨†‚®Á•·™®© ·ÆØ‡ÆÊ•··Æ‡
-	unsigned ramBanksCount : 2; //2-3 - äÆ´®Á•·‚¢Æ °†≠™Æ¢ éáì
-	unsigned videoMode : 2; //4-5 - Ä™‚®¢≠Î© ¢®§•Æ‡•¶®¨ 
-	unsigned hddCount : 2; //6-7 - ó®·´Æ Æ°≠†‡„¶•≠≠ÎÂ çÉåÑ
-	unsigned dmaAvailability : 1; //8 - ç†´®Á®• ™Æ≠‚‡Æ´´•‡† DMA
-	unsigned comCount : 3; //9-11 - ó®·´Æ †·®≠Â‡Æ≠≠ÎÂ ØÆ·´•§Æ¢†‚•´Ï≠ÎÂ ØÆ‡‚Æ¢
-	unsigned gameControllerAvailability : 1; //12 - ç†´®Á®• ®£‡Æ¢Æ£Æ ØÆ‡‚†
-	unsigned comPortJrPC: 1; //13 - ØÆ·´•§Æ¢†‚•´Ï≠Î© ØÆ‡‚ (jrPC)
-	unsigned lptCount : 2; //14-15 - ó®·´Æ LPT-ØÆ‡‚Æ¢
+	unsigned hddAvailability : 1; //0 - –Ω–∞–ª–∏—á–∏–µ –∂—ë—Å—Ç–∫–æ–≥–æ –¥–∏—Å–∫–∞
+	unsigned fpuAvailability : 1; //1 - –ú–∞—Ç–µ–º–∞—Ç–∏—á–µ—Å–∫–∏–π —Å–æ–ø—Ä–æ—Ü–µ—Å—Å–æ—Ä
+	unsigned ramBanksCount : 2; //2-3 - –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –±–∞–Ω–∫–æ–≤ –û–ó–£
+	unsigned videoMode : 2; //4-5 - –ê–∫—Ç–∏–≤–Ω—ã–π –≤–∏–¥–µ–æ—Ä–µ–∂–∏–º 
+	unsigned hddCount : 2; //6-7 - –ß–∏—Å–ª–æ –æ–±–Ω–∞—Ä—É–∂–µ–Ω–Ω—ã—Ö –ù–ì–ú–î
+	unsigned dmaAvailability : 1; //8 - –ù–∞–ª–∏—á–∏–µ –∫–æ–Ω—Ç—Ä–æ–ª–ª–µ—Ä–∞ DMA
+	unsigned comCount : 3; //9-11 - –ß–∏—Å–ª–æ –∞—Å–∏–Ω—Ö—Ä–æ–Ω–Ω—ã—Ö –ø–æ—Å–ª–µ–¥–æ–≤–∞—Ç–µ–ª—å–Ω—ã—Ö –ø–æ—Ä—Ç–æ–≤
+	unsigned gameControllerAvailability : 1; //12 - –ù–∞–ª–∏—á–∏–µ –∏–≥—Ä–æ–≤–æ–≥–æ –ø–æ—Ä—Ç–∞
+	unsigned comPortJrPC: 1; //13 - –ø–æ—Å–ª–µ–¥–æ–≤–∞—Ç–µ–ª—å–Ω—ã–π –ø–æ—Ä—Ç (jrPC)
+	unsigned lptCount : 2; //14-15 - –ß–∏—Å–ª–æ LPT-–ø–æ—Ä—Ç–æ–≤
 } PcConfiguration;
 
 unsigned char IsLeapYear(unsigned int year);
 
-//‰„≠™Ê®Ô ¢¢Æ§†§† ØÆ´Æ¶®‚•´Ï≠Æ£Æ Á®·´†
+//—Ñ—É–Ω–∫—Ü–∏—è –≤–≤–æ–¥–∞–¥–∞ –ø–æ–ª–æ–∂–∏—Ç–µ–ª—å–Ω–æ–≥–æ —á–∏—Å–ª–∞
 int Input(unsigned char raw, unsigned char column,
 	unsigned char colour);
 
-//‰„≠™Ê®Ô Ø‡Æ¢•‡™® ¢ÂÆ¶§•≠®Ô ß≠†Á•≠®Ô ¢ Á®·´Æ¢Æ© §®†ØÆßÆ≠
+//—Ñ—É–Ω–∫—Ü–∏—è –ø—Ä–æ–≤–µ—Ä–∫–∏ –≤—Ö–æ–∂–¥–µ–Ω–∏—è –∑–Ω–∞—á–µ–Ω–∏—è –≤ —á–∏—Å–ª–æ–≤–æ–π –¥–∏–∞–ø–æ–∑–æ–Ω
 unsigned char IsInRange(int value, int leftBorder, int rightBorder);
 
-//‰„≠™®Ô ¢¢Æ§† ·®¢Æ´† °•ß Æ¶®§†≠®Ô, ¢Æß¢‡†È†ÓÈ†Ô ASCII ™Æ§ ® ·™†≠-™Æ§ ≠†¶†‚Æ© ™´†¢®Ë®
+//—Ñ—É–Ω–∫–∏—è –≤–≤–æ–¥–∞ —Å–∏–≤–æ–ª–∞ –±–µ–∑ –æ–∂–∏–¥–∞–Ω–∏—è, –≤–æ–∑–≤—Ä–∞—â–∞—é—â–∞—è ASCII –∫–æ–¥ –∏ —Å–∫–∞–Ω-–∫–æ–¥ –Ω–∞–∂–∞—Ç–æ–π –∫–ª–∞–≤–∏—à–∏
 union REGS Getch(void);
 
-//‰„≠™®Ô ¢¢Æ§† ·®¢Æ´† · Æ¶®§†≠®•¨, ¢Æß¢‡†È†ÓÈ†Ô ASCII ™Æ§ ® ·™†≠-™Æ§ ≠†¶†‚Æ© ™´†¢®Ë®
+//—Ñ—É–Ω–∫–∏—è –≤–≤–æ–¥–∞ —Å–∏–≤–æ–ª–∞ —Å –æ–∂–∏–¥–∞–Ω–∏–µ–º, –≤–æ–∑–≤—Ä–∞—â–∞—é—â–∞—è ASCII –∫–æ–¥ –∏ —Å–∫–∞–Ω-–∫–æ–¥ –Ω–∞–∂–∞—Ç–æ–π –∫–ª–∞–≤–∏—à–∏
 union REGS Getchar(unsigned char raw, unsigned char column,
 	unsigned char colour);
 
-//‰„≠™Ê®Ô ¢¢Æ§† ·‚‡Æ™®
+//—Ñ—É–Ω–∫—Ü–∏—è –≤–≤–æ–¥–∞ —Å—Ç—Ä–æ–∫–∏
 char* Getline(char* str, unsigned char raw, unsigned char column,
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ·‚‡Æ™® str · ØÆß®Ê®® [raw][col]
-//Á•‡•ß Ø‡Ô¨Æ• Æ°‡†È•≠®• ™ ¢®§•Æ°„‰•‡„
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ —Å—Ç—Ä–æ–∫–∏ str —Å –ø–æ–∑–∏—Ü–∏–∏ [raw][col]
+//—á–µ—Ä–µ–∑ –ø—Ä—è–º–æ–µ –æ–±—Ä–∞—â–µ–Ω–∏–µ –∫ –≤–∏–¥–µ–æ–±—É—Ñ–µ—Ä—É
 void Print(char* str, unsigned char raw, unsigned char column,
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ÆÁ®·‚™® ·‚‡Æ™®
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ—á–∏—Å—Ç–∫–∏ —Å—Ç—Ä–æ–∫–∏
 void ClearScreenRaw(unsigned char rawNumber, unsigned char startCol);
 
-//Ø‡ÆÊ•§„‡† ÆÁ®·‚™® Ì™‡†≠†
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ—á–∏—Å—Ç–∫–∏ —ç–∫—Ä–∞–Ω–∞
 void ClearScreen(void);
 
-//Ø‡ÆÊ•§„‡† „·‚†≠Æ¢™® §†‚Î ® ¢‡•¨•≠®
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ —É—Å—Ç–∞–Ω–æ–≤–∫–∏ –¥–∞—Ç—ã –∏ –≤—Ä–µ–º–µ–Ω–∏
 void SetDateAndTime(unsigned char sec, unsigned char min,
 	unsigned char hour, unsigned char day, unsigned char month, 
 		unsigned short year);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ‚•Ø•‡•Ë≠•£Æ ¢‡•¨•≠® ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ —Ç–µ–ø–µ—Ä–µ—à–Ω–µ–≥–æ –≤—Ä–µ–º–µ–Ω–∏ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintCurrentDateAndTime(unsigned char raw, unsigned char col, 
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ®≠‰Æ‡¨†Ê®® Æ ‡†ß‡†°Æ‚Á®™•
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–∏ –æ —Ä–∞–∑—Ä–∞–±–æ—Ç—á–∏–∫–µ
 void PrintDeveloperInfo(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† Ø„≠™‚Æ¢ ¨•≠Ó Ø‡Æ£‡†¨¨Î
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –ø—É–Ω–∫—Ç–æ–≤ –º–µ–Ω—é –ø—Ä–æ–≥—Ä–∞–º–º—ã
 void PrintStartMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 	
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† Ø„≠™‚Æ¢ ¨•≠Ó ¢¢Æ§†
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –ø—É–Ω–∫—Ç–æ–≤ –º–µ–Ω—é –≤–≤–æ–¥–∞
 void PrintInputMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† Ø„≠™‚Æ¢ ¨•≠Ó ‡†°Æ‚Î · ¢‡•¨•≠•¨
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –ø—É–Ω–∫—Ç–æ–≤ –º–µ–Ω—é —Ä–∞–±–æ—Ç—ã —Å –≤—Ä–µ–º–µ–Ω–µ–º
 void PrintTimeMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 	
-//‰„≠™Ê®Ô ¢Î¢Æ§† ™Æ≠‰®£„‡†Ê®® ™Æ¨ØÏÓ‚•‡† ≠† Ì™‡†≠
+//—Ñ—É–Ω–∫—Ü–∏—è –≤—ã–≤–æ–¥–∞ –∫–æ–Ω—Ñ–∏–≥—É—Ä–∞—Ü–∏–∏ –∫–æ–º–ø—å—é—Ç–µ—Ä–∞ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintPCConfiguration(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 	
-//‰„≠™Ê®Ô §Æ°†¢´•≠®Ô ·®¨¢Æ´† ¢ °„‰‰•‡ ¢¢Æ§†, ™Æ‚Æ‡†Ô ¢Æß¢‡†È†•‚ 1, •·´® ·®¨¢Æ´
-//„·Ø•Ë≠Æ §Æ°†¢´•≠, 0 - •·´® °„‰‰•‡ ß†ØÆ´≠•≠
+//—Ñ—É–Ω–∫—Ü–∏—è –¥–æ–±–∞–≤–ª–µ–Ω–∏—è —Å–∏–º–≤–æ–ª–∞ –≤ –±—É—Ñ—Ñ–µ—Ä –≤–≤–æ–¥–∞, –∫–æ—Ç–æ—Ä–∞—è –≤–æ–∑–≤—Ä–∞—â–∞–µ—Ç 1, –µ—Å–ª–∏ —Å–∏–º–≤–æ–ª
+//—É—Å–ø–µ—à–Ω–æ –¥–æ–±–∞–≤–ª–µ–Ω, 0 - –µ—Å–ª–∏ –±—É—Ñ—Ñ–µ—Ä –∑–∞–ø–æ–ª–Ω–µ–Ω
 unsigned char PushSymbol(unsigned char symbol);
 
-//Ø‡ÆÊ•§„‡† „§†´•≠®Ô ØÆ·´•§≠•£Æ ·®¨¢Æ´† ®ß °„‰‰•‡† ¢¢Æ§†
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ —É–¥–∞–ª–µ–Ω–∏—è –ø–æ—Å–ª–µ–¥–Ω–µ–≥–æ —Å–∏–º–≤–æ–ª–∞ –∏–∑ –±—É—Ñ—Ñ–µ—Ä–∞ –≤–≤–æ–¥–∞
 void PopSymbol(void);
 
-//Ø‡ÆÊ•§„‡† ÆÁ®·‚™® °„‰‰•‡† ¢¢Æ§†
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ—á–∏—Å—Ç–∫–∏ –±—É—Ñ—Ñ–µ—Ä–∞ –≤–≤–æ–¥–∞
 void ClearInputBuffer(void);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† °„‰‰•‡† ¢¢Æ§† ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –±—É—Ñ—Ñ–µ—Ä–∞ –≤–≤–æ–¥–∞ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintInputBuffer(unsigned char raw, unsigned char col, unsigned char colour);
 
-//‰„≠™Ê®Ô Ø•‡•¢Æ§† ®ß §¢Æ®Á≠Æ-§•·Ô‚®Á≠Æ© ·®·‚•¨Î ·Á®·´•≠®Ô
-//¢ §•·Ô‚®Á≠„Ó ·®·‚•¨„ ·Á®·´•≠®Ô
+//—Ñ—É–Ω–∫—Ü–∏—è –ø–µ—Ä–µ–≤–æ–¥–∞ –∏–∑ –¥–≤–æ–∏—á–Ω–æ-–¥–µ—Å—è—Ç–∏—á–Ω–æ–π —Å–∏—Å—Ç–µ–º—ã —Å—á–∏—Å–ª–µ–Ω–∏—è
+//–≤ –¥–µ—Å—è—Ç–∏—á–Ω—É—é —Å–∏—Å—Ç–µ–º—É —Å—á–∏—Å–ª–µ–Ω–∏—è
 unsigned int BcdToInt(unsigned int bcd);
 
-//‰„≠™Ê®Ô Ø•‡•¢Æ§† ®ß §•·Ô‚®Á≠Æ© ·®·‚•¨Î ·Á®·´•≠®Ô
-//¢ §¢Æ®Á≠Æ-§•·Ô‚®Á≠„Ó ·®·‚•¨„ ·Á®·´•≠®Ô
+//—Ñ—É–Ω–∫—Ü–∏—è –ø–µ—Ä–µ–≤–æ–¥–∞ –∏–∑ –¥–µ—Å—è—Ç–∏—á–Ω–æ–π —Å–∏—Å—Ç–µ–º—ã —Å—á–∏—Å–ª–µ–Ω–∏—è
+//–≤ –¥–≤–æ–∏—á–Ω–æ-–¥–µ—Å—è—Ç–∏—á–Ω—É—é —Å–∏—Å—Ç–µ–º—É —Å—á–∏—Å–ª–µ–Ω–∏—è
 unsigned int IntToBcd(unsigned int value);
 
-//bin -> hex (1 ·®¨¢Æ´)
-//ØÆ´„Á®‚Ï 1 hex-·®¨¢Æ´ ®ß ¨´†§Ë®Â 4 °®‚ Bin4Bit
+//bin -> hex (1 —Å–∏–º–≤–æ–ª)
+//–ø–æ–ª—É—á–∏—Ç—å 1 hex-—Å–∏–º–≤–æ–ª –∏–∑ –º–ª–∞–¥—à–∏—Ö 4 –±–∏—Ç Bin4Bit
 char Bin4toHex1(unsigned int Bin4Bit);
 
-//bin -> hex2 (2 ·®¨¢Æ´†)
-//ØÆ´„Á®‚Ï 2 hex-·®¨¢Æ´† ®ß ¨´†§Ë•£Æ °†©‚† Bin4Bit
-//‡†ß¨•‡ BufOut >= 3
+//bin -> hex2 (2 —Å–∏–º–≤–æ–ª–∞)
+//–ø–æ–ª—É—á–∏—Ç—å 2 hex-—Å–∏–º–≤–æ–ª–∞ –∏–∑ –º–ª–∞–¥—à–µ–≥–æ –±–∞–π—Ç–∞ Bin4Bit
+//—Ä–∞–∑–º–µ—Ä BufOut >= 3
 char* Bin8toHex2(unsigned int Bin8Bit, char* BufOut);
 
-//bin -> hex4 (4 ·®¨¢Æ´†)
-//ØÆ´„Á®‚Ï 4 hex-·®¨¢Æ´† ®ß Bin16Bit
-//ê†ß¨•‡ BufOut >= 5
+//bin -> hex4 (4 —Å–∏–º–≤–æ–ª–∞)
+//–ø–æ–ª—É—á–∏—Ç—å 4 hex-—Å–∏–º–≤–æ–ª–∞ –∏–∑ Bin16Bit
+//–†–∞–∑–º–µ—Ä BufOut >= 5
 char* Bin16toHex4(unsigned int Bin16Bit, char* BufOut);
 
-//ØÆ´„Á®‚Ï 8 bin-·®¨¢Æ´Æ¢ ®ß ¨´†§Ë•£Æ °†©‚† Bin8Bit
-//ê†ß¨•‡ BufOut >= 9
+//–ø–æ–ª—É—á–∏—Ç—å 8 bin-—Å–∏–º–≤–æ–ª–æ–≤ –∏–∑ –º–ª–∞–¥—à–µ–≥–æ –±–∞–π—Ç–∞ Bin8Bit
+//–†–∞–∑–º–µ—Ä BufOut >= 9
 char* Bin8toBinSym8(unsigned int Bin8Bit, char* BufOut);
 
-//°„‰‰•‡ ¢¢Æ§†
+//–±—É—Ñ—Ñ–µ—Ä –≤–≤–æ–¥–∞
 volatile InputBuffer inpBuffer;
 
 volatile unsigned char isExit = 0;
@@ -223,42 +223,42 @@ int main()
 						ClearScreen();
 						PrintDeveloperInfo(0, 0, _PINK);
 						
-						Print("ç†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
+						Print("–ù–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
 						ch = Getch();
 						
 						PushSymbol(ch.h.al);
 						PrintInputBuffer(INFO_TABLE_H + 1, 25, _BRIGHT_WHITE);
 						ClearInputBuffer();
 						
-						Print("ë™†≠-™Æ§:", INFO_TABLE_H + 2, 0, _LIGHT_PURPLE);
+						Print("–°–∫–∞–Ω-–∫–æ–¥:", INFO_TABLE_H + 2, 0, _LIGHT_PURPLE);
 						Print(Bin8toHex2(ch.h.ah, scanCode), INFO_TABLE_H + 2, 25, _BRIGHT_WHITE); 
-						Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï, ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
+						Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å, –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
 						Getch();
 						break;
 					case '2':
 						ClearScreen();
 						PrintDeveloperInfo(0, 0, _PINK);
 						
-						Print("ç†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
+						Print("–ù–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
 						ch = Getchar(INFO_TABLE_H + 1, 25, _BRIGHT_WHITE);
 						
-						Print("ë™†≠-™Æ§:", INFO_TABLE_H + 2, 0, _LIGHT_PURPLE);
+						Print("–°–∫–∞–Ω-–∫–æ–¥:", INFO_TABLE_H + 2, 0, _LIGHT_PURPLE);
 						Print(Bin8toHex2(ch.h.ah, scanCode), INFO_TABLE_H + 2, 25, _BRIGHT_WHITE); 
 						
-						Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï, ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
+						Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å, –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
 						Getch();
 						break;
 					case '3':
 						ClearScreen();
 						PrintDeveloperInfo(0, 0, _PINK);
 
-						Print("Ç¢•§®‚• ·‚‡Æ™„:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
+						Print("–í–≤–µ–¥–∏—Ç–µ —Å—Ç—Ä–æ–∫—É:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
 						Getline(str, INFO_TABLE_H + 1, 25, _BRIGHT_WHITE);
 
-						Print("Ç¢•§•≠≠†Ô ·‚‡Æ™†:", INFO_TABLE_H + 2, 0, _LIGHT_PURPLE);
+						Print("–í–≤–µ–¥–µ–Ω–Ω–∞—è —Å—Ç—Ä–æ–∫–∞:", INFO_TABLE_H + 2, 0, _LIGHT_PURPLE);
 						Print(str, INFO_TABLE_H + 2, 25, _BRIGHT_WHITE);
 
-						Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï, ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
+						Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å, –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
 						Getch();
 						break;
 					case '0':
@@ -286,8 +286,8 @@ int main()
 						ClearScreen();
 						PrintDeveloperInfo(0, 0, _PINK);
 
-						Print("í•™„È®• §†‚† ® ¢‡•¨Ô:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
-						Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï, ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
+						Print("–¢–µ–∫—É—â–∏–µ –¥–∞—Ç–∞ –∏ –≤—Ä–µ–º—è:", INFO_TABLE_H + 1, 0, _LIGHT_PURPLE);
+						Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å, –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É", INFO_TABLE_H + 4, 0, _LIGHT_PURPLE);
 						while (!kbhit())
 						{
 							PrintCurrentDateAndTime(INFO_TABLE_H + 1, 25, _BRIGHT_WHITE);
@@ -302,7 +302,7 @@ int main()
 						do
 						{
 							ClearScreenRaw(i, 0);
-							Print("Ç¢•§®‚• ·•™„≠§Î:", i, 0, _BRIGHT_WHITE);
+							Print("–í–≤–µ–¥–∏—Ç–µ —Å–µ–∫—É–Ω–¥—ã:", i, 0, _BRIGHT_WHITE);
 							sec = Input(i, 30, _BRIGHT_WHITE);
 						} while(!IsInRange(sec, 0, 59));
 						i++;
@@ -310,7 +310,7 @@ int main()
 						do
 						{
 							ClearScreenRaw(i, 0);
-							Print("Ç¢•§®‚• ¨®≠„‚Î:", i, 0, _BRIGHT_WHITE);
+							Print("–í–≤–µ–¥–∏—Ç–µ –º–∏–Ω—É—Ç—ã:", i, 0, _BRIGHT_WHITE);
 							min = Input(i, 30, _BRIGHT_WHITE);
 						} while(!IsInRange(min, 0, 59));
 						i++;
@@ -318,7 +318,7 @@ int main()
 						do
 						{
 							ClearScreenRaw(i, 0);
-							Print("Ç¢•§®‚• Á†·Î:", i, 0, _BRIGHT_WHITE);
+							Print("–í–≤–µ–¥–∏—Ç–µ —á–∞—Å—ã:", i, 0, _BRIGHT_WHITE);
 							hour = Input(i, 30, _BRIGHT_WHITE);
 						} while(!IsInRange(hour, 0, 23));
 						i++;
@@ -326,7 +326,7 @@ int main()
 						do
 						{
 							ClearScreenRaw(i, 0);
-							Print("Ç¢•§®‚• £Æ§(2000 - 2030):", i, 0, _BRIGHT_WHITE);
+							Print("–í–≤–µ–¥–∏—Ç–µ –≥–æ–¥(2000 - 2030):", i, 0, _BRIGHT_WHITE);
 							year = Input(i, 30, _BRIGHT_WHITE);
 						} while(!IsInRange(year, 2000, 2030));
 						i++;
@@ -334,7 +334,7 @@ int main()
 						do
 						{
 							ClearScreenRaw(i, 0);
-							Print("Ç¢•§®‚• ¨•·ÔÊ:", i, 0, _BRIGHT_WHITE);
+							Print("–í–≤–µ–¥–∏—Ç–µ –º–µ—Å—è—Ü:", i, 0, _BRIGHT_WHITE);
 							month = Input(i, 30, _BRIGHT_WHITE);
 						} while(!IsInRange(month, 1, 12));
 						i++;
@@ -345,7 +345,7 @@ int main()
 						do
 						{
 							ClearScreenRaw(i, 0);
-							Print("Ç¢•§®‚• §•≠Ï:", i, 0, _BRIGHT_WHITE);
+							Print("–í–≤–µ–¥–∏—Ç–µ –¥–µ–Ω—å:", i, 0, _BRIGHT_WHITE);
 							day = Input(i, 30, _BRIGHT_WHITE);
 
 							if (!IsInRange(day, 1, monthDayCount[month - 1]))
@@ -357,7 +357,7 @@ int main()
 
 						SetDateAndTime(sec, min, hour, day, month, year);
 
-						Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï, ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„", ++i, 0, _LIGHT_PURPLE);
+						Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å, –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É", ++i, 0, _LIGHT_PURPLE);
 						Getch();
 						break;
 					case '0':
@@ -497,9 +497,9 @@ void Print(char* str, unsigned char raw, unsigned char column,
 	unsigned char colour)
 {
 	int i;
-	//0xb8000000 - †§‡•· ≠†Á†´† ¢®§•Æ°„‰•‡†
+	//0xb8000000 - –∞–¥—Ä–µ—Å –Ω–∞—á–∞–ª–∞ –≤–∏–¥–µ–æ–±—É—Ñ–µ—Ä–∞
 	char far* videoBuffer = (char far*)0xb8000000;
-	//ÆØ‡•§•´•≠®• ØÆß®Ê®® ≠†Á†´† ß†Ø®·® §†≠≠ÎÂ ¢ Ø†¨Ô‚®
+	//–æ–ø—Ä–µ–¥–µ–ª–µ–Ω–∏–µ –ø–æ–∑–∏—Ü–∏–∏ –Ω–∞—á–∞–ª–∞ –∑–∞–ø–∏—Å–∏ –¥–∞–Ω–Ω—ã—Ö –≤ –ø–∞–º—è—Ç–∏
 	videoBuffer += raw * SYMBOL_SIZE * SCREEN_LEN + column * SYMBOL_SIZE;
 
 	for (i = 0; str[i] != '\0'; i++)
@@ -612,8 +612,8 @@ void PrintDeveloperInfo(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour)
 {
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
-	Print("|      £‡.024401-2 åÆ©·•©Á„™ Ä.é.      |", startRaw++, startCol, colour);
-	Print("|         ãê-6 \"î„≠™Ê®® BIOS\"          |", startRaw++, startCol, colour);
+	Print("|      –≥—Ä.024401-2 –ú–æ–π—Å–µ–π—á—É–∫ –ê.–û.      |", startRaw++, startCol, colour);
+	Print("|         –õ–†-6 \"–§—É–Ω–∫—Ü–∏–∏ BIOS\"          |", startRaw++, startCol, colour);
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
 }
 
@@ -621,10 +621,10 @@ void PrintStartMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour)
 {
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
-	Print("| 1. Ç¢Æ§(INT16)                       |", startRaw++, startCol, colour);
-	Print("| 2. ÇÎ¢•·‚® ™Æ≠‰®£„‡†Ê®Ó ™Æ¨ØÏÓ‚•‡†   |", startRaw++, startCol, colour);
-	Print("| 3. Ñ†‚† ® ¢‡•¨Ô(INT1A)               |", startRaw++, startCol, colour);
-	Print("| 0. ÇÎÂÆ§                             |", startRaw++, startCol, colour);
+	Print("| 1. –í–≤–æ–¥(INT16)                       |", startRaw++, startCol, colour);
+	Print("| 2. –í—ã–≤–µ—Å—Ç–∏ –∫–æ–Ω—Ñ–∏–≥—É—Ä–∞—Ü–∏—é –∫–æ–º–ø—å—é—Ç–µ—Ä–∞   |", startRaw++, startCol, colour);
+	Print("| 3. –î–∞—Ç–∞ –∏ –≤—Ä–µ–º—è(INT1A)               |", startRaw++, startCol, colour);
+	Print("| 0. –í—ã—Ö–æ–¥                             |", startRaw++, startCol, colour);
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
 }
 
@@ -632,10 +632,10 @@ void PrintInputMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour)
 {
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
-	Print("| 1. Ç¢Æ§ ·®¨¢Æ´† °•ß Æ¶®§†≠®Ô         |", startRaw++, startCol, colour);
-	Print("| 2. Ç¢Æ§ ·®¨¢Æ´† · Æ¶®§†≠•¨           |", startRaw++, startCol, colour);
-	Print("| 3. Ç¢Æ§ ·‚‡Æ™®                       |", startRaw++, startCol, colour);
-	Print("| 0. é‚¨•≠†                            |", startRaw++, startCol, colour);
+	Print("| 1. –í–≤–æ–¥ —Å–∏–º–≤–æ–ª–∞ –±–µ–∑ –æ–∂–∏–¥–∞–Ω–∏—è         |", startRaw++, startCol, colour);
+	Print("| 2. –í–≤–æ–¥ —Å–∏–º–≤–æ–ª–∞ —Å –æ–∂–∏–¥–∞–Ω–µ–º           |", startRaw++, startCol, colour);
+	Print("| 3. –í–≤–æ–¥ —Å—Ç—Ä–æ–∫–∏                       |", startRaw++, startCol, colour);
+	Print("| 0. –û—Ç–º–µ–Ω–∞                            |", startRaw++, startCol, colour);
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
 }
 
@@ -643,9 +643,9 @@ void PrintTimeMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour)
 {
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
-	Print("| 1. ÇÎ¢•·‚® ‚•™„È•• ¢‡•¨Ô             |", startRaw++, startCol, colour);
-	Print("| 2. ì·‚†≠Æ¢®‚Ï §†‚„ ® ¢‡•¨Ô           |", startRaw++, startCol, colour);
-	Print("| 0. é‚¨•≠†                            |", startRaw++, startCol, colour);
+	Print("| 1. –í—ã–≤–µ—Å—Ç–∏ —Ç–µ–∫—É—â–µ–µ –≤—Ä–µ–º—è             |", startRaw++, startCol, colour);
+	Print("| 2. –£—Å—Ç–∞–Ω–æ–≤–∏—Ç—å –¥–∞—Ç—É –∏ –≤—Ä–µ–º—è           |", startRaw++, startCol, colour);
+	Print("| 0. –û—Ç–º–µ–Ω–∞                            |", startRaw++, startCol, colour);
 	Print("+--------------------------------------+", startRaw++, startCol, colour);
 
 }
@@ -655,7 +655,7 @@ void PrintPCConfiguration(unsigned char startRaw, unsigned char startCol,
 {
 	union REGS rg;
 	PcConfiguration pcConf;
-	char* videoModes[] = { "ç• ®·ØÆ´Ïß„•‚·Ô", "Ê¢•‚≠Æ©(40x25)", "Ê¢•‚≠Æ©(80x25)", "¨Æ≠ÆÂ‡Æ¨≠Î©(80Â25)" };
+	char* videoModes[] = { "–ù–µ –∏—Å–ø–æ–ª—å–∑—É–µ—Ç—Å—è", "—Ü–≤–µ—Ç–Ω–æ–π(40x25)", "—Ü–≤–µ—Ç–Ω–æ–π(80x25)", "–º–æ–Ω–æ—Ö—Ä–æ–º–Ω—ã–π(80—Ö25)" };
 	char str[17];
 	unsigned char dist = 60;
 	
@@ -663,53 +663,53 @@ void PrintPCConfiguration(unsigned char startRaw, unsigned char startCol,
 	int86(SYSTEM_CONFIG_BIOS_INT, &rg, &rg);
 	memcpy(&pcConf, &rg.x.ax, sizeof(rg.x.ax));
 	
-	Print("ë´Æ¢Æ ™Æ≠‰®£„‡†Ê®®:", startRaw, startCol, _LIGHT_PURPLE);
+	Print("–°–ª–æ–≤–æ –∫–æ–Ω—Ñ–∏–≥—É—Ä–∞—Ü–∏–∏:", startRaw, startCol, _LIGHT_PURPLE);
 	Print(Bin8toBinSym8(rg.h.ah, str), startRaw, startCol + 25, colour);
 	Print(Bin8toBinSym8(rg.h.al, str), startRaw, startCol + 33, colour);
 	Print(Bin16toHex4(rg.x.ax, str), startRaw++, startCol + 45, colour);
 	
 	startRaw++;
-	Print("è‡•‡Î¢†≠®• INT11:", startRaw++, startCol, _LIGHT_PURPLE);
+	Print("–ü—Ä–µ—Ä—ã–≤–∞–Ω–∏–µ INT11:", startRaw++, startCol, _LIGHT_PURPLE);
 	
-	Print("ç†´®Á®• ≠†™ÆØ®‚•´Ô ≠† ¨†£≠®‚≠Æ¨ §®·™•:", startRaw, startCol, colour);
-	Print(pcConf.hddAvailability ? "§†" : "≠•‚", startRaw++, startCol + dist, colour);
+	Print("–ù–∞–ª–∏—á–∏–µ –Ω–∞–∫–æ–ø–∏—Ç–µ–ª—è –Ω–∞ –º–∞–≥–Ω–∏—Ç–Ω–æ–º –¥–∏—Å–∫–µ:", startRaw, startCol, colour);
+	Print(pcConf.hddAvailability ? "–¥–∞" : "–Ω–µ—Ç", startRaw++, startCol + dist, colour);
 	
-	Print("ç†´®Á®• ¨†‚•¨†‚®Á•·™Æ£Æ ·ÆØ‡ÆÊ•··Æ‡†:", startRaw, startCol, colour);
-	Print(pcConf.fpuAvailability ? "§†" : "≠•‚", startRaw++, startCol + dist, colour);
+	Print("–ù–∞–ª–∏—á–∏–µ –º–∞—Ç–µ–º–∞—Ç–∏—á–µ—Å–∫–æ–≥–æ —Å–æ–ø—Ä–æ—Ü–µ—Å—Å–æ—Ä–∞:", startRaw, startCol, colour);
+	Print(pcConf.fpuAvailability ? "–¥–∞" : "–Ω–µ—Ç", startRaw++, startCol + dist, colour);
 
-	Print("äÆ´®Á•·‚¢Æ °†≠™Æ¢ éáì:", startRaw, startCol, colour);
+	Print("–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –±–∞–Ω–∫–æ–≤ –û–ó–£:", startRaw, startCol, colour);
 	Print(itoa(pcConf.ramBanksCount, str, 10), startRaw++, startCol + dist, colour);
 
-	Print("ê•¶®¨ ¢®§•Æ†§†Ø‚•‡†:", startRaw, startCol, colour);
+	Print("–†–µ–∂–∏–º –≤–∏–¥–µ–æ–∞–¥–∞–ø—Ç–µ—Ä–∞:", startRaw, startCol, colour);
 	Print(videoModes[pcConf.videoMode], startRaw++, startCol + dist, colour);
 	
-	Print("äÆ´®Á•·‚¢Æ „·‚†≠Æ¢´•≠≠ÎÂ HDD:", startRaw, startCol, colour);
+	Print("–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ —É—Å—Ç–∞–Ω–æ–≤–ª–µ–Ω–Ω—ã—Ö HDD:", startRaw, startCol, colour);
 	Print(itoa(pcConf.hddCount + 1, str, 10), startRaw++, startCol + dist, colour);
 	
-	Print("ç†´®Á®• ™Æ≠‚‡Æ´´•‡† Ø‡Ô¨Æ£Æ §Æ·‚„Ø† ™ Ø†¨Ô‚®:", startRaw, startCol, colour);
-	Print(pcConf.dmaAvailability ? "§†" : "≠•‚", startRaw++, startCol + dist, colour);
+	Print("–ù–∞–ª–∏—á–∏–µ –∫–æ–Ω—Ç—Ä–æ–ª–ª–µ—Ä–∞ –ø—Ä—è–º–æ–≥–æ –¥–æ—Å—Ç—É–ø–∞ –∫ –ø–∞–º—è—Ç–∏:", startRaw, startCol, colour);
+	Print(pcConf.dmaAvailability ? "–¥–∞" : "–Ω–µ—Ç", startRaw++, startCol + dist, colour);
 	
-	Print("äÆ´®Á•·‚¢Æ †·®≠Â‡Æ≠≠ÎÂ ØÆ·´•§Æ¢†‚•´Ï≠ÎÂ ØÆ‡‚Æ¢:", startRaw, startCol, colour);
+	Print("–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∞—Å–∏–Ω—Ö—Ä–æ–Ω–Ω—ã—Ö –ø–æ—Å–ª–µ–¥–æ–≤–∞—Ç–µ–ª—å–Ω—ã—Ö –ø–æ—Ä—Ç–æ–≤:", startRaw, startCol, colour);
 	Print(itoa(pcConf.comCount, str, 10), startRaw++, startCol + dist, colour);
 	
-	Print("ç†´®Á®• ®£‡Æ¢Æ£Æ ØÆ‡‚†:", startRaw, startCol, colour);
-	Print(pcConf.gameControllerAvailability ? "§†" : "≠•‚", startRaw++, startCol + dist, colour);
+	Print("–ù–∞–ª–∏—á–∏–µ –∏–≥—Ä–æ–≤–æ–≥–æ –ø–æ—Ä—Ç–∞:", startRaw, startCol, colour);
+	Print(pcConf.gameControllerAvailability ? "–¥–∞" : "–Ω–µ—Ç", startRaw++, startCol + dist, colour);
 	
-	Print("ç†´®Á®• ØÆ·´•§Æ¢†‚•´Ï≠Æ£Æ ØÆ‡‚† (§´Ô jrPC):", startRaw, startCol, colour);
-	Print(pcConf.comPortJrPC ? "§†" : "≠•‚", startRaw++, startCol + dist, colour);
+	Print("–ù–∞–ª–∏—á–∏–µ –ø–æ—Å–ª–µ–¥–æ–≤–∞—Ç–µ–ª—å–Ω–æ–≥–æ –ø–æ—Ä—Ç–∞ (–¥–ª—è jrPC):", startRaw, startCol, colour);
+	Print(pcConf.comPortJrPC ? "–¥–∞" : "–Ω–µ—Ç", startRaw++, startCol + dist, colour);
 	
-	Print("äÆ´®Á•·‚¢Æ Ø†‡†´´•´Ï≠ÎÂ ØÆ‡‚Æ¢:", startRaw, startCol, colour);
+	Print("–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –ø–∞—Ä–∞–ª–ª–µ–ª—å–Ω—ã—Ö –ø–æ—Ä—Ç–æ–≤:", startRaw, startCol, colour);
 	Print(itoa(pcConf.lptCount, str, 10), startRaw++, startCol + dist, colour);
 	
 	startRaw++;
-	Print("è‡•‡Î¢†≠®• INT12:", startRaw++, startCol, _LIGHT_PURPLE);
-	Print("é°Í•¨ Æ·≠Æ¢≠Æ© ÆØ•‡†‚®¢≠Æ© Ø†¨Ô‚® ™Æ¨ØÏÓ‚•‡†:", startRaw, startCol, colour);
+	Print("–ü—Ä–µ—Ä—ã–≤–∞–Ω–∏–µ INT12:", startRaw++, startCol, _LIGHT_PURPLE);
+	Print("–û–±—ä–µ–º –æ—Å–Ω–æ–≤–Ω–æ–π –æ–ø–µ—Ä–∞—Ç–∏–≤–Ω–æ–π –ø–∞–º—è—Ç–∏ –∫–æ–º–ø—å—é—Ç–µ—Ä–∞:", startRaw, startCol, colour);
 	rg.h.ah = 0;
 	int86(RAM_SIZE_BIOS_INT, &rg, &rg);
 	Print(itoa(rg.x.ax, str, 10), startRaw, startCol + dist, colour);
-	Print("äÅ", startRaw++, startCol + dist + 5, colour);
+	Print("–ö–ë", startRaw++, startCol + dist + 5, colour);
 	
-	Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï, ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„", ++startRaw, startCol, _LIGHT_PURPLE);
+	Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å, –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É", ++startRaw, startCol, _LIGHT_PURPLE);
 	Getch();
 }
 
