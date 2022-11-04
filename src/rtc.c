@@ -1,5 +1,5 @@
-//£‡.024401-2 åÆ©·•©Á„™ Ä.é.
-//ãê-5 "ó†·Î ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®"
+//–≥—Ä.024401-2 –ú–æ–π—Å–µ–π—á—É–∫ –ê.–û.
+//–õ–†-5 "–ß–∞—Å—ã —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏"
 
 #include <mem.h>
 #include <dos.h>
@@ -92,139 +92,139 @@ typedef struct
 } InputBuffer;	
 
 
-//‰„≠™Ê®Ô ¢Æß¢‡†È†•‚ 1, •·´® £Æ§ ¢®·Æ™Æ·≠Î© ® 0 ¢ Ø‡Æ‚®¢≠Æ¨ ·´„Á†•
+//—Ñ—É–Ω–∫—Ü–∏—è –≤–æ–∑–≤—Ä–∞—â–∞–µ—Ç 1, –µ—Å–ª–∏ –≥–æ–¥ –≤–∏—Å–æ–∫–æ—Å–Ω—ã–π –∏ 0 –≤ –ø—Ä–æ—Ç–∏–≤–Ω–æ–º —Å–ª—É—á–∞–µ
 unsigned char IsLeapYear(unsigned int year);
 
-//‰„≠™Ê®Ô ¢Æß¢‡†È†ÓÈ†Ô ASCII ·®¨¢Æ´ ≠†¶†‚Æ© ™´†¢®Ë®
+//—Ñ—É–Ω–∫—Ü–∏—è –≤–æ–∑–≤—Ä–∞—â–∞—é—â–∞—è ASCII —Å–∏–º–≤–æ–ª –Ω–∞–∂–∞—Ç–æ–π –∫–ª–∞–≤–∏—à–∏
 unsigned char Getch(void);
 
-//Ø‡ÆÊ•§„‡† ¢¢Æ§† ®≠‰Æ‡¨†Ê®® Á•‡•ß ™Æ≠‚‡Æ´´•‡ Ø‡•‡Î¢†≠®©
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤–≤–æ–¥–∞ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–∏ —á–µ—Ä–µ–∑ –∫–æ–Ω—Ç—Ä–æ–ª–ª–µ—Ä –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π
 unsigned int InputInt(unsigned char raw, unsigned char startCol, unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¨®£†≠®Ô ™„‡·Æ‡Æ¨
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –º–∏–≥–∞–Ω–∏—è –∫—É—Ä—Å–æ—Ä–æ–º
 void IndicateCursor(unsigned char raw, unsigned char col, unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ·‚‡Æ™® str · ØÆß®Ê®® [raw][col]
-//Á•‡•ß Ø‡Ô¨Æ• Æ°‡†È•≠®• ™ ¢®§•Æ°„‰•‡„
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ —Å—Ç—Ä–æ–∫–∏ str —Å –ø–æ–∑–∏—Ü–∏–∏ [raw][col]
+//—á–µ—Ä–µ–∑ –ø—Ä—è–º–æ–µ –æ–±—Ä–∞—â–µ–Ω–∏–µ –∫ –≤–∏–¥–µ–æ–±—É—Ñ–µ—Ä—É
 void Print(char* str, unsigned char raw, unsigned char column,
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ÆÁ®·‚™® ·‚‡Æ™®
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ—á–∏—Å—Ç–∫–∏ —Å—Ç—Ä–æ–∫–∏
 void ClearScreenRaw(unsigned char rawNumber, unsigned char startCol);
 
-//Ø‡ÆÊ•§„‡† ÆÁ®·‚™® Ì™‡†≠†
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ—á–∏—Å—Ç–∫–∏ —ç–∫—Ä–∞–Ω–∞
 void ClearScreen(void);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† £Æ‡®ßÆ≠‚†´Ï≠Æ© ‡†¨™® ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –≥–æ—Ä–∏–∑–æ–Ω—Ç–∞–ª—å–Ω–æ–π —Ä–∞–º–∫–∏ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintHorizontalBorder(unsigned char raw, unsigned char startCol,
 	unsigned char endCol, unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ¢•‡‚®™†´Ï≠Æ© ‡†¨™® ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –≤–µ—Ä—Ç–∏–∫–∞–ª—å–Ω–æ–π —Ä–∞–º–∫–∏ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintVerticalBorderBorder(unsigned char startRaw, unsigned char endRaw,
 	unsigned char col, unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ®≠‰Æ‡¨†Ê®® Æ ‡†ß‡†°Æ‚Á®™•
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–∏ –æ —Ä–∞–∑—Ä–∞–±–æ—Ç—á–∏–∫–µ
 void PrintDeveloperInfo(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† Ø„≠™‚Æ¢ Ø‡Æ£‡†¨¨Î
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –ø—É–Ω–∫—Ç–æ–≤ –ø—Ä–æ–≥—Ä–∞–º–º—ã
 void PrintMenu(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ·Æ·‚ÆÔ≠®Ô ‡•£®·‚‡Æ¢
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ —Å–æ—Å—Ç–æ—è–Ω–∏—è —Ä–µ–≥–∏—Å—Ç—Ä–æ–≤
 void PrintStatusWord(unsigned char startRaw, unsigned char startCol,
 	unsigned char colour);
 	
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ‡•£®·‚‡† ¢ §¢Æ®Á≠Æ¨ ® Ë•·‚≠†§Ê†‚®‡®Á≠Æ¨ ¢®§• ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ —Ä–µ–≥–∏—Å—Ç—Ä–∞ –≤ –¥–≤–æ–∏—á–Ω–æ–º –∏ —à–µ—Å—Ç–Ω–∞–¥—Ü–∞—Ç–∏—Ä–∏—á–Ω–æ–º –≤–∏–¥–µ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintRegInfo(Port port, unsigned char startRaw, 
 	unsigned char startCol, unsigned char colour);
 
-//‰„≠™Ê®Ô, ¢Æß¢‡†È†ÓÈ†Ô 1 •·´® RTC §Æ·‚„Ø≠Î §´Ô ·Á®‚Î¢†≠®Ô,
-//0 •·´® RTC ß†≠Ô‚Î ¢ §†≠≠Î© ¨Æ¨•≠‚
+//—Ñ—É–Ω–∫—Ü–∏—è, –≤–æ–∑–≤—Ä–∞—â–∞—é—â–∞—è 1 –µ—Å–ª–∏ RTC –¥–æ—Å—Ç—É–ø–Ω—ã –¥–ª—è —Å—á–∏—Ç—ã–≤–∞–Ω–∏—è,
+//0 –µ—Å–ª–∏ RTC –∑–∞–Ω—è—Ç—ã –≤ –¥–∞–Ω–Ω—ã–π –º–æ–º–µ–Ω—Ç
 unsigned char IsRTCFree(void);
 
-//Ø‡ÆÊ•§„‡† ß†Ø‡•‚†/‡†ß‡•Ë•≠®Ô Æ°≠Æ¢´•≠®Ô Á†·Æ¢ ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –∑–∞–ø—Ä–µ—Ç–∞/—Ä–∞–∑—Ä–µ—à–µ–Ω–∏—è –æ–±–Ω–æ–≤–ª–µ–Ω–∏—è —á–∞—Å–æ–≤ —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏
 void SetClockUpdatePermission(unsigned char isPermitted);
 
-//‰„≠™Ê®Ô ØÆ´„Á•≠®Ô ≠Æ¨•‡† §≠Ô ≠•§•´® Ø‡® „·´Æ¢®®, Á‚Æ ¢Æ·™‡•·•≠Ï• = 1
+//—Ñ—É–Ω–∫—Ü–∏—è –ø–æ–ª—É—á–µ–Ω–∏—è –Ω–æ–º–µ—Ä–∞ –¥–Ω—è –Ω–µ–¥–µ–ª–∏ –ø—Ä–∏ —É—Å–ª–æ–≤–∏–∏, —á—Ç–æ –≤–æ—Å–∫—Ä–µ—Å–µ–Ω—å–µ = 1
 unsigned char GetWeakDayNumber(unsigned char day, unsigned char month, unsigned char year);
 
-//Ø‡ÆÊ•§„‡† „·‚†≠Æ¢™® ≠Æ¢Æ£Æ ¢‡•¨•≠® ® §†‚Î
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ —É—Å—Ç–∞–Ω–æ–≤–∫–∏ –Ω–æ–≤–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏ –∏ –¥–∞—Ç—ã
 void SetNewDateAndTime(unsigned char startRaw, unsigned char startCol, unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ß†§•‡¶™® ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –∑–∞–¥–µ—Ä–∂–∫–∏ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintDelay(unsigned char startRaw, unsigned char startCol, unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† „·‚†≠Æ¢™® ß†§•‡¶™®
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ —É—Å—Ç–∞–Ω–æ–≤–∫–∏ –∑–∞–¥–µ—Ä–∂–∫–∏
 void Delay(unsigned int del, unsigned char raw, unsigned char col, unsigned char colour);
 
-//‰„≠™Ê®Ô Á‚•≠®Ô ·Æ§•‡¶®¨Æ£Æ ‡•£®·‚‡† Á†·Æ¢ ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®
+//—Ñ—É–Ω–∫—Ü–∏—è —á—Ç–µ–Ω–∏—è —Å–æ–¥–µ—Ä–∂–∏–º–æ–≥–æ —Ä–µ–≥–∏—Å—Ç—Ä–∞ —á–∞—Å–æ–≤ —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏
 char* ReadRTCField(unsigned short* value, unsigned char rtcRegister, char* buf, int bufSize);
 
-//Ø‡ÆÊ•§„‡† ®≠®Ê®†´®ß†Ê®® ·Æ°·‚¢•≠≠Æ£Æ Æ°‡†°Æ‚Á®™† Ø‡•‡Î¢†≠®© Á†·Æ¢ ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –∏–Ω–∏—Ü–∏–∞–ª–∏–∑–∞—Ü–∏–∏ —Å–æ–±—Å—Ç–≤–µ–Ω–Ω–æ–≥–æ –æ–±—Ä–∞–±–æ—Ç—á–∏–∫–∞ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π —á–∞—Å–æ–≤ —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏
 void InitUserRTCIntrHandler(void);
 
-//Ø‡ÆÊ•§„‡† ®≠®Ê®†´®ß†Ê®® Æ°‡†‡Æ‚Á®™† Ø‡•‡Î¢†≠®© Á†·Æ¢ ‡•†´Ï≠Æ£Æ ¢‡•¨•≠® ØÆ „¨Æ´Á†≠®Ó
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –∏–Ω–∏—Ü–∏–∞–ª–∏–∑–∞—Ü–∏–∏ –æ–±—Ä–∞—Ä–æ—Ç—á–∏–∫–∞ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π —á–∞—Å–æ–≤ —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏ –ø–æ —É–º–æ–ª—á–∞–Ω–∏—é
 void InitDefaultRTCIntrHandler(void);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† ‚•™„È•£Æ ¢‡•¨•≠® ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ —Ç–µ–∫—É—â–µ–≥–æ –≤—Ä–µ–º–µ–Ω–∏ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintCurrentDateTime(unsigned char raw, unsigned char col, unsigned char colour);
 
-//Ø‡ÆÊ•§„‡† ™Æ‡‡•™‚®‡Æ¢™® ¢‡•¨•≠®
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –∫–æ—Ä—Ä–µ–∫—Ç–∏—Ä–æ–≤–∫–∏ –≤—Ä–µ–º–µ–Ω–∏
 void CorrectTime(void);
 
-//‰„≠™Ê®Ô §Æ°†¢´•≠®Ô ·®¨¢Æ´† ¢ °„‰‰•‡ ¢¢Æ§†, ™Æ‚Æ‡†Ô ¢Æß¢‡†È†•‚ 1, •·´® ·®¨¢Æ´
-//„·Ø•Ë≠Æ §Æ°†¢´•≠, 0 - •·´® °„‰‰•‡ ß†ØÆ´≠•≠
+//—Ñ—É–Ω–∫—Ü–∏—è –¥–æ–±–∞–≤–ª–µ–Ω–∏—è —Å–∏–º–≤–æ–ª–∞ –≤ –±—É—Ñ—Ñ–µ—Ä –≤–≤–æ–¥–∞, –∫–æ—Ç–æ—Ä–∞—è –≤–æ–∑–≤—Ä–∞—â–∞–µ—Ç 1, –µ—Å–ª–∏ —Å–∏–º–≤–æ–ª
+//—É—Å–ø–µ—à–Ω–æ –¥–æ–±–∞–≤–ª–µ–Ω, 0 - –µ—Å–ª–∏ –±—É—Ñ—Ñ–µ—Ä –∑–∞–ø–æ–ª–Ω–µ–Ω
 unsigned char PushSymbol(unsigned char symbol);
 
-//Ø‡ÆÊ•§„‡† „§†´•≠®Ô ØÆ·´•§≠•£Æ ·®¨¢Æ´† ®ß °„‰‰•‡† ¢¢Æ§†
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ —É–¥–∞–ª–µ–Ω–∏—è –ø–æ—Å–ª–µ–¥–Ω–µ–≥–æ —Å–∏–º–≤–æ–ª–∞ –∏–∑ –±—É—Ñ—Ñ–µ—Ä–∞ –≤–≤–æ–¥–∞
 void PopSymbol(void);
 
-//Ø‡ÆÊ•§„‡† ÆÁ®·‚™® °„‰‰•‡† ¢¢Æ§†
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ—á–∏—Å—Ç–∫–∏ –±—É—Ñ—Ñ–µ—Ä–∞ –≤–≤–æ–¥–∞
 void ClearInputBuffer(void);
 
-//Ø‡ÆÊ•§„‡† ¢Î¢Æ§† °„‰‰•‡† ¢¢Æ§† ≠† Ì™‡†≠
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –≤—ã–≤–æ–¥–∞ –±—É—Ñ—Ñ–µ—Ä–∞ –≤–≤–æ–¥–∞ –Ω–∞ —ç–∫—Ä–∞–Ω
 void PrintInputBuffer(unsigned char raw, unsigned char col, unsigned char colour);
 	
-//Ø‡ÆÊ•§„‡† Æ°‡†°Æ‚™® Ø‡•‡Î¢†≠®© ™´†¢®†‚„‡Î
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ–±—Ä–∞–±–æ—Ç–∫–∏ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π –∫–ª–∞–≤–∏–∞—Ç—É—Ä—ã
 void interrupt far keyBoardHandler(void);
 
-//Ø‡ÆÊ•§„‡† Æ°‡†°Æ‚™® Ø‡•‡Î¢†≠®© RTC
+//–ø—Ä–æ—Ü–µ–¥—É—Ä–∞ –æ–±—Ä–∞–±–æ—Ç–∫–∏ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π RTC
 void interrupt far rtcHandler(void);
 
-//‰„≠™Ê®Ô Ø•‡•¢Æ§† ®ß §¢Æ®Á≠Æ-§•·Ô‚®Á≠Æ© ·®·‚•¨Î ·Á®·´•≠®Ô
-//¢ §•·Ô‚®Á≠„Ó ·®·‚•¨„ ·Á®·´•≠®Ô
+//—Ñ—É–Ω–∫—Ü–∏—è –ø–µ—Ä–µ–≤–æ–¥–∞ –∏–∑ –¥–≤–æ–∏—á–Ω–æ-–¥–µ—Å—è—Ç–∏—á–Ω–æ–π —Å–∏—Å—Ç–µ–º—ã —Å—á–∏—Å–ª–µ–Ω–∏—è
+//–≤ –¥–µ—Å—è—Ç–∏—á–Ω—É—é —Å–∏—Å—Ç–µ–º—É —Å—á–∏—Å–ª–µ–Ω–∏—è
 unsigned int BcdToInt(unsigned int bcd);
 
-//‰„≠™Ê®Ô Ø•‡•¢Æ§† ®ß §•·Ô‚®Á≠Æ© ·®·‚•¨Î ·Á®·´•≠®Ô
-//¢ §¢Æ®Á≠Æ-§•·Ô‚®Á≠„Ó ·®·‚•¨„ ·Á®·´•≠®Ô
+//—Ñ—É–Ω–∫—Ü–∏—è –ø–µ—Ä–µ–≤–æ–¥–∞ –∏–∑ –¥–µ—Å—è—Ç–∏—á–Ω–æ–π —Å–∏—Å—Ç–µ–º—ã —Å—á–∏—Å–ª–µ–Ω–∏—è
+//–≤ –¥–≤–æ–∏—á–Ω–æ-–¥–µ—Å—è—Ç–∏—á–Ω—É—é —Å–∏—Å—Ç–µ–º—É —Å—á–∏—Å–ª–µ–Ω–∏—è
 unsigned int IntToBcd(unsigned int value);
 
-//bin -> hex (1 ·®¨¢Æ´)
-//ØÆ´„Á®‚Ï 1 hex-·®¨¢Æ´ ®ß ¨´†§Ë®Â 4 °®‚ Bin4Bit
+//bin -> hex (1 —Å–∏–º–≤–æ–ª)
+//–ø–æ–ª—É—á–∏—Ç—å 1 hex-—Å–∏–º–≤–æ–ª –∏–∑ –º–ª–∞–¥—à–∏—Ö 4 –±–∏—Ç Bin4Bit
 char Bin4toHex1(unsigned int Bin4Bit);
 
-//bin -> hex2 (2 ·®¨¢Æ´†)
-//ØÆ´„Á®‚Ï 2 hex-·®¨¢Æ´† ®ß ¨´†§Ë•£Æ °†©‚† Bin4Bit
-//‡†ß¨•‡ BufOut >= 3
+//bin -> hex2 (2 —Å–∏–º–≤–æ–ª–∞)
+//–ø–æ–ª—É—á–∏—Ç—å 2 hex-—Å–∏–º–≤–æ–ª–∞ –∏–∑ –º–ª–∞–¥—à–µ–≥–æ –±–∞–π—Ç–∞ Bin4Bit
+//—Ä–∞–∑–º–µ—Ä BufOut >= 3
 char* Bin8toHex2(unsigned int Bin8Bit, char* BufOut);
 
-//bin -> hex4 (4 ·®¨¢Æ´†)
-//ØÆ´„Á®‚Ï 4 hex-·®¨¢Æ´† ®ß Bin16Bit
-//ê†ß¨•‡ BufOut >= 5
+//bin -> hex4 (4 —Å–∏–º–≤–æ–ª–∞)
+//–ø–æ–ª—É—á–∏—Ç—å 4 hex-—Å–∏–º–≤–æ–ª–∞ –∏–∑ Bin16Bit
+//–†–∞–∑–º–µ—Ä BufOut >= 5
 char* Bin16toHex4(unsigned int Bin16Bit, char* BufOut);
 
-//ØÆ´„Á®‚Ï 8 bin-·®¨¢Æ´Æ¢ ®ß ¨´†§Ë•£Æ °†©‚† Bin8Bit
-//ê†ß¨•‡ BufOut >= 9
+//–ø–æ–ª—É—á–∏—Ç—å 8 bin-—Å–∏–º–≤–æ–ª–æ–≤ –∏–∑ –º–ª–∞–¥—à–µ–≥–æ –±–∞–π—Ç–∞ Bin8Bit
+//–†–∞–∑–º–µ—Ä BufOut >= 9
 char* Bin8toBinSym8(unsigned int Bin8Bit, char* BufOut);
 
-//„™†ß†‚•´Ï ≠† ‰„≠™Ê®Ó Æ°‡†°Æ‚™® Ø‡•‡Î¢†≠®© ™´†¢®†‚„‡Î
+//—É–∫–∞–∑–∞—Ç–µ–ª—å –Ω–∞ —Ñ—É–Ω–∫—Ü–∏—é –æ–±—Ä–∞–±–æ—Ç–∫–∏ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π –∫–ª–∞–≤–∏–∞—Ç—É—Ä—ã
 void interrupt far(*oldKBHandler)(void);
-//„™†ß†‚•´Ï ≠† ‰„≠™Ê®Ó Æ°‡†°Æ‚™® Ø‡•‡Î¢†≠®© RTC
+//—É–∫–∞–∑–∞—Ç–µ–ª—å –Ω–∞ —Ñ—É–Ω–∫—Ü–∏—é –æ–±—Ä–∞–±–æ—Ç–∫–∏ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π RTC
 void interrupt far(*oldRTCHandler)(void);
 
 
-//‰´†£® ·Æ·‚ÆÔ≠®Ô Ø‡Æ£‡†¨¨Î
+//—Ñ–ª–∞–≥–∏ —Å–æ—Å—Ç–æ—è–Ω–∏—è –ø—Ä–æ–≥—Ä–∞–º–º—ã
 volatile unsigned char cancelOperation = 0;
 
 volatile unsigned int ms = 0;
@@ -234,7 +234,7 @@ volatile unsigned char isInputDataMode = 0;
 volatile unsigned char setNewTimeFlag = 0;
 volatile unsigned char setTimeDelayFlag = 0;
 
-//°„‰‰•‡ ¢¢Æ§†
+//–±—É—Ñ—Ñ–µ—Ä –≤–≤–æ–¥–∞
 volatile InputBuffer inpBuffer;
 
 Port rtcRegisters[] = 
@@ -342,9 +342,9 @@ void IndicateCursor(unsigned char raw, unsigned char col, unsigned char colour)
 void Print(char* str, unsigned char raw, unsigned char column, unsigned char colour)
 {
 	int i;
-	//0xb8000000 - †§‡•· ≠†Á†´† ¢®§•Æ°„‰•‡†
+	//0xb8000000 - –∞–¥—Ä–µ—Å –Ω–∞—á–∞–ª–∞ –≤–∏–¥–µ–æ–±—É—Ñ–µ—Ä–∞
 	char far* videoBuffer = (char far*)0xb8000000;
-	//ÆØ‡•§•´•≠®• ØÆß®Ê®® ≠†Á†´† ß†Ø®·® §†≠≠ÎÂ ¢ Ø†¨Ô‚®
+	//–æ–ø—Ä–µ–¥–µ–ª–µ–Ω–∏–µ –ø–æ–∑–∏—Ü–∏–∏ –Ω–∞—á–∞–ª–∞ –∑–∞–ø–∏—Å–∏ –¥–∞–Ω–Ω—ã—Ö –≤ –ø–∞–º—è—Ç–∏
 	videoBuffer += raw * SYMBOL_SIZE * SCREEN_LEN + column * SYMBOL_SIZE;
 
 	for (i = 0; str[i] != '\0'; i++)
@@ -391,17 +391,17 @@ void PrintVerticalBorder(unsigned char startRaw, unsigned char endRaw, unsigned 
 void PrintDeveloperInfo(unsigned char startRaw, unsigned char startCol, unsigned char colour)
 {
 	Print("+--------------------------------------+", startRaw, startCol, colour);
-	Print("|      £‡.024401-2 åÆ©·•©Á„™ Ä.é.      |", startRaw + 1, startCol, colour);
-	Print("|    ãê-5 \"ó†·Î ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®\"     |", startRaw + 2, startCol, colour);
+	Print("|      –≥—Ä.024401-2 –ú–æ–π—Å–µ–π—á—É–∫ –ê.–û.      |", startRaw + 1, startCol, colour);
+	Print("|    –õ–†-5 \"–ß–∞—Å—ã —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏\"     |", startRaw + 2, startCol, colour);
 	Print("+--------------------------------------+", startRaw + 3, startCol, colour);
 }
 
 void PrintMenu(unsigned char startRaw, unsigned char startCol, unsigned char colour)
 {
 	Print("+--------------------------------------+", startRaw, startCol, colour);
-	Print("| 1. ì·‚†≠Æ¢®‚Ï §†‚„ ® ¢‡•¨Ô           |", startRaw + 1, startCol, colour);
-	Print("| 2. ì·‚†≠Æ¢®‚Ï ß†§•‡¶™„               |", startRaw + 2, startCol, colour);
-	Print("| 0. ÇÎÂÆ§                             |", startRaw + 3, startCol, colour);
+	Print("| 1. –£—Å—Ç–∞–Ω–æ–≤–∏—Ç—å –¥–∞—Ç—É –∏ –≤—Ä–µ–º—è           |", startRaw + 1, startCol, colour);
+	Print("| 2. –£—Å—Ç–∞–Ω–æ–≤–∏—Ç—å –∑–∞–¥–µ—Ä–∂–∫—É               |", startRaw + 2, startCol, colour);
+	Print("| 0. –í—ã—Ö–æ–¥                             |", startRaw + 3, startCol, colour);
 	Print("+--------------------------------------+", startRaw + 4, startCol, colour);
 }
 
@@ -459,12 +459,12 @@ void PrintRegInfo(Port port, unsigned char startRaw, unsigned char startCol, uns
 unsigned char IsRTCFree()
 {
 	outp(PORT_70, RTC_STATE_A_REGISTER);
-	//0x80 = 1000 0000, Ø‡Æ¢•‡Ô•¨ 7 °®‚ ‡•£®·‚‡† A
-	//Á†·Æ¢ ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®. Ö·´® 1 - Á†·Î ß†≠Ô‚Î, 0 - ·¢Æ°Æ§≠Î
+	//0x80 = 1000 0000, –ø—Ä–æ–≤–µ—Ä—è–µ–º 7 –±–∏—Ç —Ä–µ–≥–∏—Å—Ç—Ä–∞ A
+	//—á–∞—Å–æ–≤ —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏. –ï—Å–ª–∏ 1 - —á–∞—Å—ã –∑–∞–Ω—è—Ç—ã, 0 - —Å–≤–æ–±–æ–¥–Ω—ã
 	return !(inp(PORT_71) & 0x80);
 }
 
-void SetClockUpdatePermission(unsigned char isPermitted) //Â„©≠Ô Ø•‡•Ø‡Æ¢•‡®‚Ï
+void SetClockUpdatePermission(unsigned char isPermitted) //—Ö—É–π–Ω—è –ø–µ—Ä–µ–ø—Ä–æ–≤–µ—Ä–∏—Ç—å
 {
 	unsigned char state;
 
@@ -487,7 +487,7 @@ void SetNewDateAndTime(unsigned char startRaw, unsigned char startCol, unsigned 
 
 	do
 	{
-		Print("Ç¢•§®‚• £Æ§ (2000 - 2030):", startRaw, startCol, colour);
+		Print("–í–≤–µ–¥–∏—Ç–µ –≥–æ–¥ (2000 - 2030):", startRaw, startCol, colour);
 		year = InputInt(startRaw, startCol + del, colour);
 	} while(year < 2000 || year > 2030 || year == ERROR_INP);
 	startRaw++;
@@ -496,14 +496,14 @@ void SetNewDateAndTime(unsigned char startRaw, unsigned char startCol, unsigned 
 
 	do
 	{
-		Print("Ç¢•§®‚• ¨•·ÔÊ (1 - 12):", startRaw, startCol, colour);
+		Print("–í–≤–µ–¥–∏—Ç–µ –º–µ—Å—è—Ü (1 - 12):", startRaw, startCol, colour);
 		month = InputInt(startRaw, startCol + del, colour);
 	} while(month < 1 || month > 12 || month == ERROR_INP);
 	startRaw++;
 
 	do
 	{
-		Print("Ç¢•§®‚• §•≠Ï (1 - 31):", startRaw, startCol, colour);
+		Print("–í–≤–µ–¥–∏—Ç–µ –¥–µ–Ω—å (1 - 31):", startRaw, startCol, colour);
 		day = InputInt(startRaw, startCol + del, colour);
 
 		if (month == 2)
@@ -511,7 +511,7 @@ void SetNewDateAndTime(unsigned char startRaw, unsigned char startCol, unsigned 
 			if (isLeapYear && day > 29)
 			{
 				ClearScreenRaw(startRaw, startCol);
-				Print("Ç ‰•¢‡†´• ¢®·Æ™Æ·≠Æ£Æ £Æ§† ≠• ¨Æ¶•‚ °Î‚Ï °Æ´ÏË• 29 §≠•©.", startRaw, startCol, _PINK);
+				Print("–í —Ñ–µ–≤—Ä–∞–ª–µ –≤–∏—Å–æ–∫–æ—Å–Ω–æ–≥–æ –≥–æ–¥–∞ –Ω–µ –º–æ–∂–µ—Ç –±—ã—Ç—å –±–æ–ª—å—à–µ 29 –¥–Ω–µ–π.", startRaw, startCol, _PINK);
 				Getch();
 				ClearScreenRaw(startRaw, startCol);
 
@@ -520,7 +520,7 @@ void SetNewDateAndTime(unsigned char startRaw, unsigned char startCol, unsigned 
 			else if (!isLeapYear && day > 28)
 			{
 				ClearScreenRaw(startRaw, startCol);
-				Print("Ç ‰•¢‡†´• ≠• ¢®·Æ™Æ·≠Æ£Æ £Æ§† ≠• ¨Æ¶•‚ °Î‚Ï °Æ´ÏË• 28 §≠•©.", startRaw, startCol, _PINK);
+				Print("–í —Ñ–µ–≤—Ä–∞–ª–µ –Ω–µ –≤–∏—Å–æ–∫–æ—Å–Ω–æ–≥–æ –≥–æ–¥–∞ –Ω–µ –º–æ–∂–µ—Ç –±—ã—Ç—å –±–æ–ª—å—à–µ 28 –¥–Ω–µ–π.", startRaw, startCol, _PINK);
 				Getch();
 				ClearScreenRaw(startRaw, startCol);
 
@@ -534,26 +534,26 @@ void SetNewDateAndTime(unsigned char startRaw, unsigned char startCol, unsigned 
 
 	do
 	{
-		Print("Ç¢•§®‚• ·•™„≠§Î (0 - 59):", startRaw, startCol, colour);
+		Print("–í–≤–µ–¥–∏—Ç–µ —Å–µ–∫—É–Ω–¥—ã (0 - 59):", startRaw, startCol, colour);
 		sec = InputInt(startRaw, startCol + del, colour);
 	} while(sec > 59 || sec == ERROR_INP);
 	startRaw++;
 
 	do
 	{
-		Print("Ç¢•§®‚• ¨®≠„‚Î (0 - 59):", startRaw, startCol, colour);
+		Print("–í–≤–µ–¥–∏—Ç–µ –º–∏–Ω—É—Ç—ã (0 - 59):", startRaw, startCol, colour);
 		min = InputInt(startRaw, startCol + del, colour);
 	} while(min > 59 || min == ERROR_INP);
 	startRaw++;
 
 	do
 	{
-		Print("Ç¢•§®‚• Á†·Î (0 - 23):", startRaw, startCol, colour);
+		Print("–í–≤–µ–¥–∏—Ç–µ —á–∞—Å—ã (0 - 23):", startRaw, startCol, colour);
 		hour = InputInt(startRaw, startCol + del, colour);
 	} while(hour > 23 || hour == ERROR_INP);
 	startRaw++;
 
-	Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„...", startRaw++, startCol, _PINK);
+	Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É...", startRaw++, startCol, _PINK);
 	Getch();
 
 	SetClockUpdatePermission(0);
@@ -601,21 +601,21 @@ void PrintDelay(unsigned char startRaw, unsigned char startCol, unsigned char co
 	setTimeDelayFlag = 0;
 	cancelOperation = 0;
 
-	Print ("->Ñ´Ô Æ‚¨•≠Î ≠†¶¨®‚• ESC<-", startRaw++, startCol, _PINK);
+	Print ("->–î–ª—è –æ—Ç–º–µ–Ω—ã –Ω–∞–∂–º–∏—Ç–µ ESC<-", startRaw++, startCol, _PINK);
 	do
 	{
-		Print("Ç¢•§®‚• ¢•´®Á®≠„ ß†§•‡¶™® (1500 - 10000 ¨·):", startRaw, startCol, colour);
+		Print("–í–≤–µ–¥–∏—Ç–µ –≤–µ–ª–∏—á–∏–Ω—É –∑–∞–¥–µ—Ä–∂–∫–∏ (1500 - 10000 –º—Å):", startRaw, startCol, colour);
 		del = InputInt(startRaw, startCol + 45, colour);
 	} while(del < 1500 || del > 10000 || del == ERROR_INP);
 
 	if (!cancelOperation)
 	{
-		Print("é·‚†´Æ·Ï ¨®´´®·•™„≠§:", ++startRaw, startCol, colour);
+		Print("–û—Å—Ç–∞–ª–æ—Å—å –º–∏–ª–ª–∏—Å–µ–∫—É–Ω–¥:", ++startRaw, startCol, colour);
 
-		Print("ç†Á†´Ï≠Î• §†‚† ® ¢‡•¨Ô:", startRaw + 2, startCol, colour);
+		Print("–ù–∞—á–∞–ª—å–Ω—ã–µ –¥–∞—Ç–∞ –∏ –≤—Ä–µ–º—è:", startRaw + 2, startCol, colour);
 		PrintCurrentDateTime(startRaw + 3, startCol, colour);
 
-		Print("äÆ≠•Á≠Î• §†‚† ® ¢‡•¨Ô:", startRaw + 2, startCol + 35, colour);
+		Print("–ö–æ–Ω–µ—á–Ω—ã–µ –¥–∞—Ç–∞ –∏ –≤—Ä–µ–º—è:", startRaw + 2, startCol + 35, colour);
 
 		Delay(del, startRaw, startCol + 23, colour);
 
@@ -624,7 +624,7 @@ void PrintDelay(unsigned char startRaw, unsigned char startCol, unsigned char co
 		startRaw += 4;
 	}
 
-	Print("ó‚Æ°Î Ø‡Æ§Æ´¶®‚Ï ≠†¶¨®‚• ´Ó°„Ó ™´†¢®Ë„...", ++startRaw, startCol, _PINK);
+	Print("–ß—Ç–æ–±—ã –ø—Ä–æ–¥–æ–ª–∂–∏—Ç—å –Ω–∞–∂–º–∏—Ç–µ –ª—é–±—É—é –∫–ª–∞–≤–∏—à—É...", ++startRaw, startCol, _PINK);
 	Getch();
 
 	for (i = startRawCopy; i <= startRaw; i++) {
@@ -639,14 +639,14 @@ void Delay(unsigned int del, unsigned char raw, unsigned char col, unsigned char
 	char strDel[6];
 	unsigned char i, oldA1h, old21h, hour;
 
-	//ëÁ®‚Î¢†≠®• ·‚†‡Æ© ¨†·™® Ø‡•‡Î¢†≠®© ¢•§Æ¨Æ£Æ ™Æ≠‚‡Æ´´•‡†
+	//–°—á–∏—Ç—ã–≤–∞–Ω–∏–µ —Å—Ç–∞—Ä–æ–π –º–∞—Å–∫–∏ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π –≤–µ–¥–æ–º–æ–≥–æ –∫–æ–Ω—Ç—Ä–æ–ª–ª–µ—Ä–∞
 	oldA1h = inp(PORT_A1);
-	//Å´Æ™®‡Æ¢™† ¢·•Â Ø‡•‡Î¢†≠®© ™‡Æ¨• IRQ8
+	//–ë–ª–æ–∫–∏—Ä–æ–≤–∫–∞ –≤—Å–µ—Ö –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π –∫—Ä–æ–º–µ IRQ8
 	outp(PORT_A1, 0xFE);
 
-	//ëÁ®‚Î¢†≠®• ·‚†‡Æ© ¨†·™® Ø‡•‡Î¢†≠®© ¢•§„È•£Æ ™Æ≠‚‡Æ´´•‡†
+	//–°—á–∏—Ç—ã–≤–∞–Ω–∏–µ —Å—Ç–∞—Ä–æ–π –º–∞—Å–∫–∏ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π –≤–µ–¥—É—â–µ–≥–æ –∫–æ–Ω—Ç—Ä–æ–ª–ª–µ—Ä–∞
 	old21h = inp(PORT_21);
-	//Å´Æ™®‡Æ¢™† ¢·•Â Ø‡•‡Î¢†≠®© ™‡Æ¨• IRQ2
+	//–ë–ª–æ–∫–∏—Ä–æ–≤–∫–∞ –≤—Å–µ—Ö –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏–π –∫—Ä–æ–º–µ IRQ2
 	outp(PORT_21, 0xFB);
 
 	InitUserRTCIntrHandler();
@@ -664,9 +664,9 @@ void Delay(unsigned int del, unsigned char raw, unsigned char col, unsigned char
 
 	CorrectTime();
 
-	//ÇÆ··‚†≠Æ¢´•≠®• ·‚†‡Æ© ¨†·™® ¢•§Æ¨Æ£Æ ™Æ≠‚‡Æ´´•‡†
+	//–í–æ—Å—Å—Ç–∞–Ω–æ–≤–ª–µ–Ω–∏–µ —Å—Ç–∞—Ä–æ–π –º–∞—Å–∫–∏ –≤–µ–¥–æ–º–æ–≥–æ –∫–æ–Ω—Ç—Ä–æ–ª–ª–µ—Ä–∞
 	outp(PORT_A1, oldA1h);
-	//ÇÆ··‚†≠Æ¢´•≠®• ·‚†‡Æ© ¨†·™® ¢•§„È•£Æ ™Æ≠‚‡Æ´´•‡†
+	//–í–æ—Å—Å—Ç–∞–Ω–æ–≤–ª–µ–Ω–∏–µ —Å—Ç–∞—Ä–æ–π –º–∞—Å–∫–∏ –≤–µ–¥—É—â–µ–≥–æ –∫–æ–Ω—Ç—Ä–æ–ª–ª–µ—Ä–∞
 	outp(PORT_21, old21h);
 }
 
@@ -698,14 +698,14 @@ void InitUserRTCIntrHandler(void)
 	oldRTCHandler = getvect(RTC_INT);
 	setvect(RTC_INT, rtcHandler);
 
-	//ê†ß‡•Ë•≠®• Ø‡•‡Î¢†≠®Ô IRQ8 Á†·Æ¢ ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®
+	//–†–∞–∑—Ä–µ—à–µ–Ω–∏–µ –ø—Ä–µ—Ä—ã–≤–∞–Ω–∏—è IRQ8 —á–∞—Å–æ–≤ —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏
 	while(!IsRTCFree());
 	outp(PORT_70, RTC_STATE_B_REGISTER);
 	state = inp(PORT_71);
 
 	while(!IsRTCFree());
 	outp(PORT_70, RTC_STATE_B_REGISTER);
-	//á†Ø®·Ï ≠Æ¢Æ£Æ ß≠†Á•≠®Ô ¢ §†≠≠Î© ‡•£®·‚‡. 40h -> 0100 0000
+	//–ó–∞–ø–∏—Å—å –Ω–æ–≤–æ–≥–æ –∑–Ω–∞—á–µ–Ω–∏—è –≤ –¥–∞–Ω–Ω—ã–π —Ä–µ–≥–∏—Å—Ç—Ä. 40h -> 0100 0000
 	outp(PORT_71, state | 0x40);
 }
 
@@ -713,7 +713,7 @@ void InitDefaultRTCIntrHandler(void)
 {
 	unsigned char state;
 
-	//¢Æ··‚†≠Æ¢´•≠®• ‡•£®·‚‡† ·Æ·‚ÆÔ≠®Ô B Á†·Æ¢ ‡•†´Ï≠Æ£Æ ¢‡•¨•≠®
+	//–≤–æ—Å—Å—Ç–∞–Ω–æ–≤–ª–µ–Ω–∏–µ —Ä–µ–≥–∏—Å—Ç—Ä–∞ —Å–æ—Å—Ç–æ—è–Ω–∏—è B —á–∞—Å–æ–≤ —Ä–µ–∞–ª—å–Ω–æ–≥–æ –≤—Ä–µ–º–µ–Ω–∏
 	while(!IsRTCFree());
 	outp(PORT_70, RTC_STATE_B_REGISTER);
 	state = inp(PORT_71);
@@ -730,7 +730,7 @@ void PrintCurrentDateTime(unsigned char raw, unsigned char col, unsigned char co
 {
 	char time[9], date[14], temp[5];
 	unsigned char hour;
-	char* weakDays[] = { "Çë", "èç", "Çí", "ëê", "óí", "èí", "ëÅ" };
+	char* weakDays[] = { "–í–°", "–ü–ù", "–í–¢", "–°–†", "–ß–¢", "–ü–¢", "–°–ë" };
 	memset(time, '\0', sizeof(time));
 	memset(date, '\0', sizeof(date));
 
